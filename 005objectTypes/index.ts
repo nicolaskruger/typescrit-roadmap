@@ -62,3 +62,30 @@ const narutoZ: DBZN = {
 };
 
 //TODO generic object
+
+interface Box<T> {
+  content: T;
+}
+
+const setContent = <T extends unknown>(box: Box<T>, content: T) => {
+  box.content = content;
+};
+
+// ready only array
+
+const doSomethingWithReadOnlyArray = (array: ReadonlyArray<string>) => {
+  // can not push
+};
+
+// tuple
+
+type Tuple = [number, number, number?];
+
+function readButtonInput(...args: [string, number, ...boolean[]]) {
+  const [name, version, ...input] = args;
+  // ...
+}
+
+function tReadButtonInput(name: string, version: number, ...input: boolean[]) {
+  // ...
+}
